@@ -1,7 +1,6 @@
 {% load i18n %}
 {% load tags_active %}
         <div class="pagehead">
-            <a href="{% url 'create' host_id %}" class="btn btn-sm btn-success pull-right">{% trans "New Instance" %}</a>
             <h1><a href="{% url 'overview' host_id %}">{{ compute.name|upper }}</a></h1>
         </div>
         <div class="sidebar">
@@ -11,9 +10,6 @@
                 </li>
                 <li>
                     <a href="{% url 'storages' host_id %}" class="list {% active request "^/storage" %}">{% trans "Storages" %}</a>
-                </li>
-                <li>
-                    <a href="{% url 'networks' host_id %}" class="list {% active request "^/network" %}">{% trans "Networks" %}</a>
                 </li>
                 <li>
                     <a href="{% url 'overview' host_id %}" class="list {% active request "^/host" %}">{% trans "Overview" %}</a>

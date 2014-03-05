@@ -67,10 +67,6 @@
                     <span class="glyphicon glyphicon-briefcase"></span><br>{% trans "Access" %}
                 </a>
             </li>
-            <li><a class="inst-btn" href="#snapshots" data-toggle="tab">
-                    <span class="glyphicon glyphicon-camera"></span><br>{% trans "Snapshots" %}
-                </a>
-            </li>
             <li><a class="inst-btn" href="#graph" data-toggle="tab">
                     <span class="glyphicon glyphicon-signal"></span><br>{% trans "Graphics" %}
                 </a>
@@ -373,71 +369,6 @@
                             <button type="submit" class="btn btn-lg btn-danger pull-right" name="change_xml">{% trans "Save" %}</button>
                         </form>
                         <div class="clearfix"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="tab-pane" id="snapshots">
-                <ul class="nav nav-tabs" style="margin-top: 20px">
-                    <li class="active"><a href="#createsnapshot" data-toggle="tab">{% trans "Create Snapshot" %}</a></li>
-                    <li><a href="#istaceshapshosts" data-toggle="tab">{% trans "Restore from Snapshots" %}</a></li>
-                </ul>
-                <div class="tab-content">
-                    <div class="tab-pane tab-inst active" id="createsnapshot">
-                        <p>{% trans "To take a snapshot please shutdown your instance." %}</p>
-                        <form class="form-horizontal" method="post" role="form">{% csrf_token %}
-                            <div class="form-group">
-                                <label for="snapshot" class="col-sm-2 control-label">{% trans "Name" %}</label>
-                                <div class="col-sm-4">
-                                    <input type="text" class="form-control" name="name" placeholder="{% trans "Name" %}" maxlength="14">
-                                </div>
-                            </div>
-                            {% ifequal status 5 %}
-                                <button type="submit" class="btn btn-primary btn-lg pull-right" name="snapshot">{% trans "Create Snapshot" %}</button>
-                            {% else %}
-                                <button class="btn btn-primary btn-lg pull-right disabled">{% trans "Create Snapshot" %}</button>
-                            {% endifequal %}
-                        </form>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="tab-pane tab-inst" id="istaceshapshosts">
-                        <p>{% trans "If you want to revert a snapshot shutdown the instance" %}</p>
-                        {% if snapshots %}
-                            <table class="table table-bordered">
-                                <thead>
-                                <tr class="active">
-                                    <th>{% trans "Name" %}</th>
-                                    <th>{% trans "Date" %}</th>
-                                    <th colspan="2">{% trans "Action" %}</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                {% for snap in snapshots %}
-                                    <tr>
-                                        <td><strong>{{ snap.name }}</strong></td>
-                                        <td>{{ snap.date|date:"M d H:i:s" }}</td>
-                                        <td style="width:30px;">
-                                            <form action="" method="post" style="height:10px;">{% csrf_token %}
-                                                <input type="hidden" name="name" value="{{ snap.name }}">
-                                                {% ifequal status 5 %}
-                                                    <button type="submit" class="btn btn-sm btn-primary" name="revert_snapshot" onclick="return confirm('Are you sure?')">{% trans "Revert" %}</button>
-                                                {% else %}
-                                                    <button type="button" class="btn btn-sm btn-primary disabled">{% trans "Revert" %}</button>
-                                                {% endifequal %}
-                                            </form>
-                                        </td>
-                                        <td style="width:30px;">
-                                            <form action="" method="post">{% csrf_token %}
-                                                <input type="hidden" name="name" value="{{ snap.name }}">
-                                                <button type="submit" class="btn btn-sm btn-danger" name="delete_snapshot" onclick="return confirm('{% trans "Are you sure?" %}')">{% trans "Delete" %}</button>
-                                            </form>
-                                        </td>
-                                    </tr>
-                                {% endfor %}
-                                </tbody>
-                            </table>
-                        {% else %}
-                            <p>{% trans "You do not have any snapshots" %}</p>
-                        {% endif %}
                     </div>
                 </div>
             </div>

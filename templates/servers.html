@@ -58,7 +58,7 @@
                     {% for host_id, info in hosts_info.items %}
                         <tr>
                             <td>{{ forloop.counter }}</td>
-                            <td><strong>{{ info.0 }}</strong> [<a href="ssh://{{ info.1 }}">{{ info.1 }}]</a></td>
+                            <td><strong>{{ info.0 }}</strong> </td>
                             <td>
                                 {% ifequal info.2 1 %}
                                     <span class="text-success">{% trans "connected" %}</span>
@@ -72,14 +72,8 @@
                                     <a href="{% url 'instances' host_id %}" class="btn btn-primary">
                                         <span class="glyphicon glyphicon-th-large"></span>
                                     </a>
-                                    <a href="{% url 'create' host_id %}" class="btn btn-primary">
-                                        <span class="glyphicon glyphicon-plus"></span>
-                                    </a>
                                     <a href="{% url 'storages' host_id %}" class="btn btn-primary">
                                         <span class="glyphicon glyphicon-hdd"></span>
-                                    </a>
-                                    <a href="{% url 'networks' host_id %}" class="btn btn-primary">
-                                        <span class="glyphicon glyphicon-globe"></span>
                                     </a>
                                     <a href="{% url 'overview' host_id %}" class="btn btn-primary">
                                         <span class="glyphicon glyphicon-info-sign"></span>
