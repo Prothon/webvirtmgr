@@ -1,4 +1,6 @@
-# WebVirtMgr panel - v4.3.4
+# WebVirtMgr panel Cluster Aware - v0.0.1
+
+Trying to port WebVirtMgr to work with CMAN / RGMANGER cluster suite.
 
 ### Whats new?
 
