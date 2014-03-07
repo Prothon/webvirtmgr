@@ -23,9 +23,15 @@
                 <li>
                        <a href="{% url 'infrastructure' %}" title="{% trans "Show all host and vms" %}">{% trans "Infrastructure" %}</a>
                 </li>
+                <li>
+                       <a href="{% url 'servers_list' %}" title="{% trans "Show the Server view" %}">{% trans "Servers" %}</a>
+                </li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a>Build 0.0.2</a>
+                </li>
                 {% if request.user.is_authenticated or user.is_authenticated %}
                     <li class="">
                         <a href="{% url 'logout' %}">{% trans "Sign out" %}</a>
