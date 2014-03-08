@@ -147,7 +147,7 @@ def cman(request):
     compute = Compute.objects.filter()
 
     localhostname = subprocess.Popen(['hostname'], stdout=subprocess.PIPE).communicate()[0] 
-
+    x = 0
     stdout = {}
     for host in compute:
         x = x + 1
