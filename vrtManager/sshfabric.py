@@ -14,13 +14,3 @@ class RunCommand(object):
         StandardOut = stdout.read()
         client.close()
         return StandardOut
-        
-    def run(self, command):
-        """run Execute this command on all hosts in the list"""
-        (stdin, stdout, stderr) = paramiko.exec_command(command)
-        stdin.close()
-        return stdin, stdout, stderr
-
-    def close(self, args):
-        for conn in self.connections:
-            conn.close()
