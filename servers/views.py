@@ -9,6 +9,7 @@ from instance.models import Instance
 from servers.forms import ComputeAddTcpForm, ComputeAddSshForm
 from vrtManager.hostdetails import wvmHostDetails
 from vrtManager.connection import CONN_SSH, CONN_TCP, SSH_PORT, TCP_PORT
+from vrtManager.fabric import uptime
 from libvirt import libvirtError
 
 
@@ -139,6 +140,8 @@ def cman(request):
     """
     if not request.user.is_authenticated():
         return HttpResponseRedirect('/login')
+
+    fabrictest = fabric.uptime 
 
     compute = Compute.objects.filter()
     hosts_vms = {}
