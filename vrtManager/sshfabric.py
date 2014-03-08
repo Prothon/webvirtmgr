@@ -21,15 +21,12 @@ class RunCommand(cmd.Cmd):
         else:
             print "usage: host "
 
-    def do_connect(self, args):
+    def do_connect(self):
         """Connect to all hosts in the hosts list"""
         for host in self.hosts:
             client = paramiko.SSHClient()
-            client.set_missing_host_key_policy(
-                paramiko.AutoAddPolicy())
-            client.connect(host[0], 
-                username=host[1], 
-                password=host[2])
+            client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+            client.connect(host[0],username=host[1],password=host[2])
             self.connections.append(client)
 
     def do_run(self, command):
