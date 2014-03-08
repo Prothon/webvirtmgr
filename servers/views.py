@@ -9,7 +9,7 @@ from instance.models import Instance
 from servers.forms import ComputeAddTcpForm, ComputeAddSshForm
 from vrtManager.hostdetails import wvmHostDetails
 from vrtManager.connection import CONN_SSH, CONN_TCP, SSH_PORT, TCP_PORT
-from vrtManager.fabric import uptime
+import vrtManager.fabric
 from libvirt import libvirtError
 
 
