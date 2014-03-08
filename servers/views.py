@@ -146,7 +146,7 @@ def cman(request):
 
     compute = Compute.objects.filter()
     #uptimetest = sshfabric.run("127.0.0.1", 22, uptime)
-    #uptimetest = subprocess.Popen(['w'], stdout=subprocess.PIPE).communicate()[0] 
+    localhostname = subprocess.Popen(['hostname'], stdout=subprocess.PIPE).communicate()[0] 
 #    ssh = paramiko.SSHClient()
 #    ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 #    ssh.connect('10.13.37.31', username='webvirtmgr', password='lol')
