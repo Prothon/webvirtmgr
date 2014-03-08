@@ -4,7 +4,6 @@ import paramiko
 import cmd
 
 class RunCommand(object):
-
     def connect(self, hostip, username, password, port):
         """Connect to all hosts in the hosts list"""
         for host in self.hosts:
