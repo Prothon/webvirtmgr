@@ -13,3 +13,6 @@ class ssh_connect(object):
     def get_hostname(self, uri, cmd):  
         execute(cmd, hosts=uri)
         return hostname
+
+    def uptime(self):
+        local(uptime)

@@ -142,5 +142,6 @@ def cman(request):
         return HttpResponseRedirect('/login')
 
     compute = Compute.objects.filter()
+    uptimetest = sshfabric.uptime
 
     return render_to_response('cman.html', locals(), context_instance=RequestContext(request))
