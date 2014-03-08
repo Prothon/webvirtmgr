@@ -2,7 +2,7 @@
 {% load i18n %}
 {% block title %}{% trans "CMAN" %}{% endblock %}
 {% block content %}
-    {% for p in stdout.items }
+    {% for p in stdout.items %}
         <br />
         <p>Stdout: </p>
         <pre>{{ p }}</pre>
