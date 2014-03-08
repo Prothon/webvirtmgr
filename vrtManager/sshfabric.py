@@ -6,11 +6,10 @@ import cmd
 class RunCommand(object):
     def connect(self, hostip, username, password, port):
         """Connect to all hosts in the hosts list"""
-        for host in self.hosts:
-            client = paramiko.SSHClient()
-            client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-            client.connect(hostip, username = username, password = password, port=port)
-            self.connections.append(client)
+        client = paramiko.SSHClient()
+        client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+        client.connect(hostip, username = username, password = password, port=port)
+        self.connections.append(client)
 
     def run(self, command):
         """run Execute this command on all hosts in the list"""
