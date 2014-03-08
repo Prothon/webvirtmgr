@@ -142,6 +142,5 @@ def cman(request):
         return HttpResponseRedirect('/login')
 
     fabrictest = fabric.uptime 
-
-
+    print fabrictest
     return render_to_response('cman.html', locals(), context_instance=RequestContext(request))
