@@ -152,7 +152,7 @@ def cman(request):
 #    ssh.connect('10.13.37.31', username='webvirtmgr', password='lol')
 #    stdin, stdout, stderr = ssh.exec_command("hostname")
 
-    ssh = sshfabric.RunCommand
+    ssh = RunCommand()
     ssh.do_add_host("10.13.37.31","webvirtmgr","lol")
     ssh.do_connect()
     stdout = ssh.do_run("hostname")
