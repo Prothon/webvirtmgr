@@ -11,6 +11,7 @@ import kronos
 import threading
 import traceback
 
-def get_hostname(request):  
-    execute(hostname, hosts=localhost)
-    return hostname
+class ssh_connect(uri, cmd):
+    def get_hostname(self, request):  
+        execute(hostname, hosts=localhost)
+        return hostname
