@@ -156,6 +156,6 @@ def cman(request):
             host.login,
             host.password,
             22,
-            "hostname")
+            "clustat")
 
     return render_to_response('cman.html', locals(), context_instance=RequestContext(request))
