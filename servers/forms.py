@@ -7,6 +7,8 @@ from servers.models import Compute
 
 
 class ComputeAddTcpForm(forms.Form):
+    clustername = forms.CharField(error_messages={'required': _('No Cluster Name has been entered')},
+                           max_length=20)
     name = forms.CharField(error_messages={'required': _('No hostname has been entered')},
                            max_length=20)
     hostname = forms.CharField(error_messages={'required': _('No IP / Domain name has been entered')},
