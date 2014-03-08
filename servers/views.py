@@ -79,7 +79,8 @@ def servers_list(request):
             form = ComputeAddTcpForm(request.POST)
             if form.is_valid():
                 data = form.cleaned_data
-                new_tcp_host = Compute(name=data['name'],
+                new_tcp_host = Compute(cluster=data['cluster'],
+                                       name=data['name'],
                                        hostname=data['hostname'],
                                        type=CONN_TCP,
                                        login=data['login'],
