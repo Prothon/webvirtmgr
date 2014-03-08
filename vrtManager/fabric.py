@@ -1,5 +1,7 @@
-import fabric
+import fabric.api as fab
+from fabric.network import disconnect_all
+from contextlib import contextmanager
 
-class fabrictests():
-    def uptime(self):
-        local('uname -s')
+def get_hostname(request):  
+    hostname = f.remote_server(hostname)
+    return hostname
