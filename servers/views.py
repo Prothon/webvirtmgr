@@ -151,7 +151,7 @@ def cman(request):
 #    ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 #    ssh.connect('10.13.37.31', username='webvirtmgr', password='lol')
 #    stdin, stdout, stderr = ssh.exec_command("hostname")
-
+# Test
     ssh = RunCommand()
     stdin, stdout, stderr = ssh.connect('node1.prothon.lab','webvirtmgr','lol',22,"w")
     return render_to_response('cman.html', locals(), context_instance=RequestContext(request))
