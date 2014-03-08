@@ -153,7 +153,11 @@ def cman(request):
         try:
             x = x + 1
             ssh = RunCommand()
-            stdout[x] = ssh.connect(host,host.login,host.password,22,"hostname")
+            stdout[x] = ssh.connect(host.hostname,
+                host.login,
+                host.password,
+                22,
+                "hostname")
             status = 1
         except Exception:
             status = 2
