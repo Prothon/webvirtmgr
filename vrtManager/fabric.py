@@ -1,4 +1,4 @@
-from fabric import api as fab
+from fabric import api
 #from fabric.network import disconnect_all
 from contextlib import contextmanager
 
