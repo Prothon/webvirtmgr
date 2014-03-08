@@ -157,7 +157,7 @@ def cman(request):
     for host in compute:
         try:
             ssh = RunCommand()
-            stdout[] = ssh.connect(host.hostname,host.login,host.password,22,"hostname")
+            stdout[host.id] = ssh.connect(host,host.login,host.password,22,"hostname")
             status = 1
         except Exception:
             status = 2
