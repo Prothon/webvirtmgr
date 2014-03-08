@@ -12,7 +12,7 @@ class RunCommand(object):
 
     def run(self, command):
         """run Execute this command on all hosts in the list"""
-        (stdin, stdout, stderr) = self.exec_command(command)
+        (stdin, stdout, stderr) = paramiko.exec_command(command)
         stdin.close()
         return stdin, stdout, stderr
 
