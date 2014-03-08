@@ -141,6 +141,6 @@ def cman(request):
     if not request.user.is_authenticated():
         return HttpResponseRedirect('/login')
 
-    #fabrictest = fabric.uptime 
-    #print fabrictest
+    compute = Compute.objects.filter()
+    fabrictest = fabric.uptime()
     return render_to_response('cman.html', locals(), context_instance=RequestContext(request))
