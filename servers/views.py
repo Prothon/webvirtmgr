@@ -12,7 +12,7 @@ from instance.models import Instance
 from servers.forms import ComputeAddTcpForm, ComputeAddSshForm
 from vrtManager.hostdetails import wvmHostDetails
 from vrtManager.connection import CONN_SSH, CONN_TCP, SSH_PORT, TCP_PORT
-from vrtManager.sshfabric import FabricSupport 
+from vrtManager.sshfabric import RunCommand 
 from libvirt import libvirtError
 
 
@@ -147,8 +147,13 @@ def cman(request):
     compute = Compute.objects.filter()
     #uptimetest = sshfabric.run("127.0.0.1", 22, uptime)
     uptimetest = subprocess.Popen(['w'], stdout=subprocess.PIPE).communicate()[0] 
-    ssh = paramiko.SSHClient()
-    ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-    ssh.connect('10.13.37.31', username='webvirtmgr', password='lol')
-    stdin, stdout, stderr = ssh.exec_command("hostname")
+#    ssh = paramiko.SSHClient()
+#    ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+#    ssh.connect('10.13.37.31', username='webvirtmgr', password='lol')
+#    stdin, stdout, stderr = ssh.exec_command("hostname")
+
+    ssh = RunCommand
+    ssh.do_add_host(10.13.37.31,webvirtmgr,lol)
+    ssh.do_connect()
+    stdout = ssh.do_run("hostname")
     return render_to_response('cman.html', locals(), context_instance=RequestContext(request))
