@@ -9,7 +9,6 @@ class RunCommand(object):
         client = paramiko.SSHClient()
         client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
         client.connect(hostip, username = username, password = password, port=port)
-        self.connections.append(client)
 
     def run(self, command):
         """run Execute this command on all hosts in the list"""
