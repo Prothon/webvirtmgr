@@ -152,7 +152,7 @@ def cman(request):
 #    ssh.connect('10.13.37.31', username='webvirtmgr', password='lol')
 #    stdin, stdout, stderr = ssh.exec_command("hostname")
 
-    HostIP=10.13.37.31
+    HostIP="10.13.37.31"
     ssh = RunCommand()
     ssh.connect(HostIP,'webvirtmgr','lol','22')
     stdin, stdout, stderr = ssh.do_run("w")
