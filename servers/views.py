@@ -9,7 +9,7 @@ from instance.models import Instance
 from servers.forms import ComputeAddTcpForm, ComputeAddSshForm
 from vrtManager.hostdetails import wvmHostDetails
 from vrtManager.connection import CONN_SSH, CONN_TCP, SSH_PORT, TCP_PORT
-from vrtManager.sshfabric import ssh_connect
+from vrtManager.sshfabric import FabricSupport 
 from libvirt import libvirtError
 
 
@@ -142,6 +142,6 @@ def cman(request):
         return HttpResponseRedirect('/login')
 
     compute = Compute.objects.filter()
-    uptimetest = sshfabric.uptime
+    uptimetest = sshfabric.run("127.0.0.1", 22, uptime)
 
     return render_to_response('cman.html', locals(), context_instance=RequestContext(request))

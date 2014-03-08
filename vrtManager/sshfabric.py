@@ -9,10 +9,10 @@ import datetime
 import threading
 import traceback
 
-class ssh_connect(object):
-    def get_hostname(self, uri, cmd):  
-        execute(cmd, hosts=uri)
-        return hostname
+class FabricSupport:
+    def __init__ (self):
+        pass
 
-    def uptime(self):
-        local(uptime)
+    def run(self, host, port, command):
+        env.host_string = "%s:%s" % (host, port)
+        run(command)
