@@ -1,4 +1,4 @@
 import fabric
 
-def host_type():
+def uptime():
     run('uname -s')
