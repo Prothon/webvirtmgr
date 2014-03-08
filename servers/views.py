@@ -158,8 +158,8 @@ def cman(request):
         try:
             ssh = RunCommand()
             stdout = ssh.connect(host.hostname,host.login,host.password,22,"hostname")
-            status == 1
+            status = 1
         except Exception:
-            status == 2
+            status = 2
 
     return render_to_response('cman.html', locals(), context_instance=RequestContext(request))
