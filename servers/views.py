@@ -154,6 +154,6 @@ def cman(request):
 
     HostIP="10.13.37.31"
     ssh = RunCommand()
-    ssh.connect(HostIP,'webvirtmgr','lol','22')
+    ssh.connect(%d,'webvirtmgr','lol','22') % HostIP
     stdin, stdout, stderr = ssh.do_run("w")
     return render_to_response('cman.html', locals(), context_instance=RequestContext(request))
