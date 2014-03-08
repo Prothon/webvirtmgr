@@ -30,12 +30,11 @@ class RunCommand(cmd.Cmd):
             self.connections.append(client)
 
     def do_run(self, command):
-        """run 
-        Execute this command on all hosts in the list"""
-        stdin, stdout, stderr = conn.exec_command(command)
-        stdin.close()
-        for line in stdout.read().splitlines():
-            return 'host: %s: %s' % (host[0], line)
+        """run Execute this command on all hosts in the list"""
+        for host, conn in zip(self.hosts, self.connections):
+            stdin, stdout, stderr = conn.exec_command(command)
+            stdin.close()
+            return stdin, stdout, stderr
 
     def do_close(self, args):
         for conn in self.connections:
