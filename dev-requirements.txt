@@ -4,3 +4,4 @@ django-jenkins==0.14.1
 pyflakes==0.7.3
 pylint==1.1.0
 pep8==1.4.6
+fabric==1.8.2
