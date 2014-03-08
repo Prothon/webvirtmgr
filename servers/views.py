@@ -153,8 +153,6 @@ def cman(request):
 #    stdin, stdout, stderr = ssh.exec_command("hostname")
 
     ssh = RunCommand()
-    ssh.do_add_host("10.13.37.31,webvirtmgr,lol")
-    ssh.do_connect()
+    ssh.connect("10.13.37.31","webvirtmgr","lol","22")
     stdin, stdout, stderr = ssh.do_run("w")
-    ssh.do_close()
     return render_to_response('cman.html', locals(), context_instance=RequestContext(request))
