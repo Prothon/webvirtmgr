@@ -1,4 +1,5 @@
 import socket
+import os
 
 from django.shortcuts import render_to_response
 from django.http import HttpResponseRedirect
@@ -142,6 +143,8 @@ def cman(request):
         return HttpResponseRedirect('/login')
 
     compute = Compute.objects.filter()
-    uptimetest = sshfabric.run("127.0.0.1", 22, uptime)
+    #uptimetest = sshfabric.run("127.0.0.1", 22, uptime)
+    p = sub.Popen('uptime',stdout=sub.PIPE,stderr=sub.PIPE)
+    output, errors = p.communicate()
 
     return render_to_response('cman.html', locals(), context_instance=RequestContext(request))
