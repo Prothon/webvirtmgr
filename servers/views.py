@@ -147,17 +147,13 @@ def cman(request):
     compute = Compute.objects.filter()
 
     localhostname = subprocess.Popen(['hostname'], stdout=subprocess.PIPE).communicate()[0] 
-#    ssh = paramiko.SSHClient()
-#    ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-#    ssh.connect('10.13.37.31', username='webvirtmgr', password='lol')
-#    stdin, stdout, stderr = ssh.exec_command("hostname")
-# Test
 
     stdout = {}
     for host in compute:
         try:
+            x = x + 1
             ssh = RunCommand()
-            stdout[host.id] = ssh.connect(host,host.login,host.password,22,"hostname")
+            stdout[x] = ssh.connect(host,host.login,host.password,22,"hostname")
             status = 1
         except Exception:
             status = 2
