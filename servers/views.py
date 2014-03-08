@@ -132,3 +132,40 @@ def infrastructure(request):
             hosts_vms[host.id, host.name, status, 0, 0, 0] = None
 
     return render_to_response('infrastructure.html', locals(), context_instance=RequestContext(request))
+
+def cman(request):
+    """
+    cman page.
+    """
+    if not request.user.is_authenticated():
+        return HttpResponseRedirect('/login')
+
+    compute = Compute.objects.filter()
+    hosts_vms = {}
+
+    for host in compute:
+        try:
+            socket_host = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            socket_host.settimeout(1)
+            if host.type == CONN_SSH:
+                socket_host.connect((host.hostname, SSH_PORT))
+            if host.type == CONN_TCP:
+                socket_host.connect((host.hostname, TCP_PORT))
+            socket_host.close()
+            status = 1
+        except Exception:
+            status = 2
+
+        if status == 1:
+            try:
+                conn = wvmHostDetails(host, host.login, host.password, host.type)
+                host_info = conn.get_node_info()
+                host_mem = conn.get_memory_usage()
+                hosts_vms[host.id, host.name, status, host_info[3], host_info[2],
+                          host_mem['percent']] = conn.get_host_instances()
+            except libvirtError as e:
+                hosts_vms[host.id, host.name, 3, 0, 0, 0] = None
+        else:
+            hosts_vms[host.id, host.name, status, 0, 0, 0] = None
+
+    return render_to_response('infrastructure.html', locals(), context_instance=RequestContext(request))
