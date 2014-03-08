@@ -2,15 +2,14 @@
 {% load i18n %}
 {% block title %}{% trans "CMAN" %}{% endblock %}
 {% block content %}
-    {{ uptimetest }}
     <br />
     <br />
-    {{ stdout }}
+    <p>Stdout: {{ stdout }}</p>
     <br />
     <br />
-    {{ stdin }}
+    <p>Stdin: {{ stdin }}</p>
     <br />
     <br />
-    {{ stderr }}
+    <p>Stderr: {{ stderr }}</p>
  <p>Testing output of rerender</p>
 {% endblock %}

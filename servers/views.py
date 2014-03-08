@@ -146,7 +146,7 @@ def cman(request):
 
     compute = Compute.objects.filter()
     #uptimetest = sshfabric.run("127.0.0.1", 22, uptime)
-    uptimetest = subprocess.Popen(['w'], stdout=subprocess.PIPE).communicate()[0] 
+    #uptimetest = subprocess.Popen(['w'], stdout=subprocess.PIPE).communicate()[0] 
 #    ssh = paramiko.SSHClient()
 #    ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 #    ssh.connect('10.13.37.31', username='webvirtmgr', password='lol')
@@ -155,5 +155,5 @@ def cman(request):
     ssh = RunCommand()
     ssh.do_add_host("10.13.37.31,webvirtmgr,lol")
     ssh.do_connect()
-    stdout = ssh.do_run("hostname")
+    ssh.do_run("hostname")
     return render_to_response('cman.html', locals(), context_instance=RequestContext(request))
