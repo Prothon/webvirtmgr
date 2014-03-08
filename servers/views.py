@@ -145,7 +145,7 @@ def cman(request):
         return HttpResponseRedirect('/login')
 
     compute = Compute.objects.filter()
-    #uptimetest = sshfabric.run("127.0.0.1", 22, uptime)
+
     localhostname = subprocess.Popen(['hostname'], stdout=subprocess.PIPE).communicate()[0] 
 #    ssh = paramiko.SSHClient()
 #    ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
@@ -158,4 +158,5 @@ def cman(request):
         try:
             ssh = RunCommand()
             stdout = ssh.connect(host.hostname,host.login,host.password,22,"hostname")
+
     return render_to_response('cman.html', locals(), context_instance=RequestContext(request))
