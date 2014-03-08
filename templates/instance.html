@@ -59,16 +59,12 @@
         <hr>
         <ul class="nav nav-tabs" style="height: 61px;">
             <li class="active">
-                <a class="inst-btn" href="#power" data-toggle="tab">
-                    <span class="glyphicon glyphicon-off"></span><br>{% trans "Power" %}
+                <a class="inst-btn" href="#graph" data-toggle="tab">
+                    <span class="glyphicon glyphicon-signal"></span><br>{% trans "Graphics" %}
                 </a>
             </li>
             <li><a class="inst-btn" href="#access" data-toggle="tab">
                     <span class="glyphicon glyphicon-briefcase"></span><br>{% trans "Access" %}
-                </a>
-            </li>
-            <li><a class="inst-btn" href="#graph" data-toggle="tab">
-                    <span class="glyphicon glyphicon-signal"></span><br>{% trans "Graphics" %}
                 </a>
             </li>
             <li><a class="inst-btn" href="#settings" data-toggle="tab">
@@ -79,10 +75,15 @@
                     <span class="glyphicon glyphicon-cloud-download"></span><br>{% trans "Migrate" %}
                 </a>
             </li>
+            <li>
+                <a class="inst-btn" href="#power" data-toggle="tab">
+                    <span class="glyphicon glyphicon-off"></span><br>{% trans "Power" %}
+                </a>
+            </li>
         </ul>
 
         <div class="tab-content">
-            <div class="tab-pane active" id="power" style="margin-top: 20px">
+            <div class="tab-pane" id="power" style="margin-top: 20px">
                 <ul class="nav nav-tabs ">
                     <li class="active"><a href="#shutdown" data-toggle="tab">{% trans "Shutdown" %}</a></li>
                     <li><a href="#forceshutdown" data-toggle="tab">{% trans "Force Shutdown" %}</a></li>
@@ -368,7 +369,7 @@
                     </div>
                 </div>
             </div>
-            <div class="tab-pane" id="graph">
+            <div class="tab-pane active" id="graph">
                 <ul class="nav nav-tabs" style="margin-top: 20px">
                     <li class="active"><a href="#statistics" data-toggle="tab">{% trans "Instance Statistics" %}</a></li>
                 </ul>
