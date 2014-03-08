@@ -32,14 +32,10 @@ class RunCommand(cmd.Cmd):
     def do_run(self, command):
         """run 
         Execute this command on all hosts in the list"""
-        if command:
-            for host, conn in zip(self.hosts, self.connections):
-                stdin, stdout, stderr = conn.exec_command(command)
-                stdin.close()
-                for line in stdout.read().splitlines():
-                    print 'host: %s: %s' % (host[0], line)
-        else:
-            print "usage: run "
+        stdin, stdout, stderr = conn.exec_command(command)
+        stdin.close()
+        for line in stdout.read().splitlines():
+            return 'host: %s: %s' % (host[0], line)
 
     def do_close(self, args):
         for conn in self.connections:
