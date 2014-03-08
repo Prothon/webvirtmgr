@@ -2,7 +2,10 @@
 {% load i18n %}
 {% block title %}{% trans "CMAN" %}{% endblock %}
 {% block content %}
+<h1>Local server</h1>
+<br />
 <p>Webserver hostname</p><pre>{{ localhostname }}</pre><br />
+<h1>Remote server</h1>
     {% for p in stdout.items %}
         <br />
         <p>Stdout: </p>
