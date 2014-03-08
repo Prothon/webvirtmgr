@@ -150,16 +150,12 @@ def cman(request):
 
     stdout = {}
     for host in compute:
-        try:
-            x = x + 1
-            ssh = RunCommand()
-            stdout[x] = ssh.connect(host.hostname,
-                host.login,
-                host.password,
-                22,
-                "hostname")
-            status = 1
-        except Exception:
-            status = 2
+        x = x + 1
+        ssh = RunCommand()
+        stdout[x] = ssh.connect(host.hostname,
+            host.login,
+            host.password,
+            22,
+            "hostname")
 
     return render_to_response('cman.html', locals(), context_instance=RequestContext(request))
