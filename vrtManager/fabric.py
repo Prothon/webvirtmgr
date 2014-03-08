@@ -1,5 +1,4 @@
-from fabric import run, local, hosts, cd
-from fabric import django
+import fabric
 
 def host_type():
     run('uname -s')
