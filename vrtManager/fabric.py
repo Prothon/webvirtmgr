@@ -1,4 +1,5 @@
 import fabric
 
-def uptime():
-    local('uname -s')
+class fabrictests():
+    def uptime(self):
+        local('uname -s')
