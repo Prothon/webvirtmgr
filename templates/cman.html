@@ -2,9 +2,11 @@
 {% load i18n %}
 {% block title %}{% trans "CMAN" %}{% endblock %}
 {% block content %}
-    <br />
+{% for p in stdout }
     <br />
     <p>Stdout: </p>
-    <pre>{{ stdout }}</pre>
- <p>Testing output of rerender</p>
+    <pre>{{ p }}</pre>
+    <br />
+{% endfor %}
+<p>Testing output of rerender</p>
 {% endblock %}

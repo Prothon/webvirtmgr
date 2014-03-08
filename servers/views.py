@@ -153,5 +153,8 @@ def cman(request):
 #    stdin, stdout, stderr = ssh.exec_command("hostname")
 # Test
     ssh = RunCommand()
-    stdout = ssh.connect('node1.prothon.lab','webvirtmgr','lol',22,"hostname")
+    stdout = {}
+    stdout[1] = ssh.connect('node1.prothon.lab','webvirtmgr','lol',22,"hostname")
+    stdout[2] = ssh.connect('node1.prothon.lab','webvirtmgr','lol',22,"w")
+    stdout[3] = ssh.connect('node1.prothon.lab','webvirtmgr','lol',22,"date")
     return render_to_response('cman.html', locals(), context_instance=RequestContext(request))
