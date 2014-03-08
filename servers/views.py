@@ -154,5 +154,5 @@ def cman(request):
 
     ssh = RunCommand()
     ssh.connect('node1.prothon.lab','webvirtmgr','lol',22)
-    stdin, stdout, stderr = ssh.do_run("w")
+    stdin, stdout, stderr = ssh.run("w")
     return render_to_response('cman.html', locals(), context_instance=RequestContext(request))
