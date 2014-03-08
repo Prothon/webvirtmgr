@@ -5,9 +5,6 @@ import cmd
 
 class RunCommand(cmd.Cmd):
     """ Simple shell to run a command on the host """
-
-    prompt = 'ssh > '
-
     def __init__(self):
         cmd.Cmd.__init__(self)
         self.hosts = []
