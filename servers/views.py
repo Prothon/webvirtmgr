@@ -144,5 +144,5 @@ def cman(request):
 
     compute = Compute.objects.filter()
     #uptimetest = sshfabric.run("127.0.0.1", 22, uptime)
-    uptimetest = subprocess.check_output(["w"]);
+    uptimetest = subprocess.Popen(['w'], stdout=subprocess.PIPE).communicate()[0] 
     return render_to_response('cman.html', locals(), context_instance=RequestContext(request))
