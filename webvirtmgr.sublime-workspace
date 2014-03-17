@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"uptime",
+				"uptimetest"
+			],
+			[
+				"fabri",
+				"fabrictest"
+			],
+			[
+				"fab",
+				"fabric"
+			],
+			[
 				"remem",
 				"remember_me"
 			],
@@ -20,27 +32,82 @@
 	"buffers":
 	[
 		{
-			"file": "templates/login.html",
+			"file": "templates/base.html",
 			"settings":
 			{
-				"buffer_size": 887,
+				"buffer_size": 2172,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "reload_program.sh",
+			"file": "servers/views.py",
 			"settings":
 			{
-				"buffer_size": 79,
-				"line_ending": "Unix",
-				"name": "#!/bin/bash"
+				"buffer_size": 5650,
+				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "templates/create.html",
+			"file": "servers/forms.py",
 			"settings":
 			{
-				"buffer_size": 26733,
+				"buffer_size": 3693,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/servers.html",
+			"settings":
+			{
+				"buffer_size": 12469,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/instance.html",
+			"settings":
+			{
+				"buffer_size": 32871,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/login.html",
+			"settings":
+			{
+				"buffer_size": 894,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "servers/models.py",
+			"settings":
+			{
+				"buffer_size": 400,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "manage.py",
+			"settings":
+			{
+				"buffer_size": 253,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "vrtManager/sshfabric.py",
+			"settings":
+			{
+				"buffer_size": 554,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/cman.html",
+			"settings":
+			{
+				"buffer_size": 405,
 				"line_ending": "Unix"
 			}
 		}
@@ -48,28 +115,68 @@
 	"build_system": "Packages/Python/Python.sublime-build",
 	"command_palette":
 	{
-		"height": 172.0,
+		"height": 292.0,
 		"selected_items":
 		[
-			[
-				":git",
-				"Git: Graph Current File"
-			],
-			[
-				":com",
-				"Git: Commit"
-			],
-			[
-				":comm",
-				"Git: Commit"
-			],
 			[
 				":w",
 				":w - Save"
 			],
 			[
+				":push",
+				"Git: Push Current Branch"
+			],
+			[
+				":quick",
+				"Git: Quick Commit"
+			],
+			[
+				":quic",
+				"Git: Quick Commit"
+			],
+			[
+				":qui",
+				"Git: Quick Commit"
+			],
+			[
+				":quikc",
+				"Git: Quick Commit"
+			],
+			[
+				":pus",
+				"Git: Push Current Branch"
+			],
+			[
+				":W",
+				":w - Save"
+			],
+			[
+				":quc",
+				"Git: Quick Commit"
+			],
+			[
+				":com",
+				"Git: Quick Commit"
+			],
+			[
+				":qu",
+				"Git: Quick Commit"
+			],
+			[
+				":comm",
+				"Git: Commit Selected Hunk"
+			],
+			[
+				":add",
+				"Git: Add Current File"
+			],
+			[
 				":commi",
 				"Git: Commit"
+			],
+			[
+				":git",
+				"Git: Graph Current File"
 			],
 			[
 				":git co",
@@ -82,10 +189,6 @@
 			[
 				":pull",
 				"Git: Pull"
-			],
-			[
-				":push",
-				"Git: Push"
 			],
 			[
 				":commit",
@@ -126,6 +229,21 @@
 	},
 	"file_history":
 	[
+		"/home/raymer/Projects/webvirtmgr/instance/models.py",
+		"/home/raymer/Projects/webvirtmgr/templates/instance.html",
+		"/home/raymer/Projects/webvirtmgr/vrtManager/IPy.py",
+		"/home/raymer/Projects/webvirtmgr/webvirtmgr/settings.py",
+		"/home/raymer/Projects/webvirtmgr/vrtManager/fabric.py",
+		"/home/raymer/Projects/webvirtmgr/static/css/webvirtmgr.css",
+		"/home/raymer/Projects/webvirtmgr/templates/servers.html",
+		"/home/raymer/Projects/webvirtmgr/templates/infrastructure.html",
+		"/home/raymer/Projects/webvirtmgr/templates/login.html",
+		"/home/raymer/Projects/webvirtmgr/webvirtmgr/urls.py",
+		"/home/raymer/Projects/webvirtmgr/templates/create.html",
+		"/home/raymer/Projects/webvirtmgr/requirements.txt",
+		"/home/raymer/Projects/webvirtmgr/dev-requirements.txt",
+		"/home/raymer/Projects/webvirtmgr/initial_installation.sh",
+		"/home/raymer/Projects/webvirtmgr/reload_program.sh",
 		"/home/raymer/Projects/webvirtmgr/webvirtmgr.sublime-workspace",
 		"/home/raymer/Projects/webvirtmgr/.gitignore",
 		"/home/raymer/Projects/webvirtmgr/templates/base.html",
@@ -163,7 +281,7 @@
 	],
 	"find":
 	{
-		"height": 26.0
+		"height": 34.0
 	},
 	"find_in_files":
 	{
@@ -177,6 +295,13 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"host_tcp_add",
+			"status",
+			"conn",
+			"ssh",
+			"host_",
+			"host_vms",
+			"host_vms\n",
 			"delete",
 			"buttonText",
 			"add",
@@ -202,7 +327,7 @@
 		[
 			"Template_Dlink_Switch"
 		],
-		"reverse": true,
+		"reverse": false,
 		"show_context": true,
 		"use_buffer2": true,
 		"whole_word": false,
@@ -211,24 +336,24 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 9,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "templates/login.html",
+					"file": "templates/base.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 887,
+						"buffer_size": 2172,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								871,
-								871
+								1445,
+								1445
 							]
 						],
 						"settings":
@@ -241,45 +366,106 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "reload_program.sh",
+					"file": "servers/views.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 79,
+						"buffer_size": 5650,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								79,
-								79
+								2609,
+								2609
 							]
 						],
 						"settings":
 						{
-							"auto_name": "#!/bin/bash",
-							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 889.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "servers/forms.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3693,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								247,
+								247
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "templates/servers.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 12469,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								12022,
+								12022
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1296.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "templates/create.html",
+					"buffer": 4,
+					"file": "templates/instance.html",
 					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 26733,
+						"buffer_size": 32871,
 						"regions":
 						{
 						},
@@ -301,6 +487,152 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "templates/login.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 894,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								761,
+								761
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "servers/models.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 400,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								240,
+								240
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "manage.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 253,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "vrtManager/sshfabric.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 554,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								554,
+								554
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "templates/cman.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 405,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								139,
+								139
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
